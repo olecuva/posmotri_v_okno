@@ -146,7 +146,7 @@ input {
   gap: 15px;
 }
 
-.search-form__label:has( .search-form__checkbox) {
+.search-form__label:has(.search-form__checkbox) {
   display: flex;
   align-items: center;
   width: fit-content;
@@ -338,5 +338,5 @@ input {
 
 .content__list::-webkit-scrollbar,
 .content__video-card-description::-webkit-scrollbar {
-  width: 0;
+  block-size: 0;
 }
