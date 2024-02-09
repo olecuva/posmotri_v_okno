@@ -43,24 +43,16 @@ ol {
   list-style: none;
 }
 
-input {
-  background-color: transparent;
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  line-height: inherit;
-}
-
 *:focus-visible {
   outline: 1px solid #fff;
 }
 
 .visually-hidden {
   position: absolute;
-  width: 1px;
-  height: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
   clip-path: inset(50%);
   white-space: nowrap;
 }
@@ -109,7 +101,7 @@ input {
 
 .search-form__label {
   display: block;
-  width: fit-content;
+  inline-size: fit-content;
 }
 
 .search-form__textfield {
@@ -118,13 +110,19 @@ input {
   border-color: #fff;
   color: inherit;
   font-family: inherit;
-  font-size: 18px;
-  line-height: 21.6px;
+  font-size: inherit;
+  line-height: inherit;
   background-color: transparent;
   cursor: text;
   appearance: none;
   min-inline-size: 225px;
   min-block-size: 27px;
+}
+
+.search-form__label:has(.search-form__checkbox) {
+  display: flex;
+  align-items: center;
+  inline-size: fit-content;
 }
 
 .search-form__textfield:focus {
@@ -146,12 +144,6 @@ input {
   gap: 15px;
 }
 
-.search-form__label:has(.search-form__checkbox) {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-}
-
 .search-form__checkbox.visually-hidden {
   z-index: -1;
   opacity: 0;
@@ -162,11 +154,11 @@ input {
   display: inline-block;
   flex-grow: 0;
   flex-shrink: 0;
-  width: 19px;
-  height: 19px;
   margin-right: 5px;
   border: 1px solid #fff;
   vertical-align: middle;
+  inline-size: 19px;
+  block-size: 19px;
 }
 
 .search-form__checkbox:focus {
@@ -187,10 +179,10 @@ input {
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: '';
   display: block;
-  width: 15px;
-  height: 15px;
   margin: 1px;
   background-color: #fff;
+  inline-size: 15px;
+  block-size: 15px;
 }
 
 .search-form__label:has(.search-form__checkbox:checked) {
@@ -200,11 +192,11 @@ input {
 .button {
   border: 1px solid #fff;
   padding: 0;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  color: inherit;
+  font-family: inherit;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 21.6px;
+  font-size: inherit;
+  line-height: inherit;
   text-align: center;
   background-color: transparent;
   min-block-size: 34px;
