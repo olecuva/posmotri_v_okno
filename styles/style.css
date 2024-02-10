@@ -200,7 +200,6 @@ ol {
 
 .content__details {
   flex-grow: 1;
-  min-inline-size: 399px;
   block-size: 100%;
 }
 
