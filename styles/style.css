@@ -93,10 +93,8 @@ ol {
 
 .search-form__fieldset-title {
   margin-block-end: 5px;
-  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 21.6px;
 }
 
 .search-form__label {
@@ -122,7 +120,6 @@ ol {
 .search-form__label:has(.search-form__checkbox) {
   display: flex;
   align-items: center;
-  inline-size: fit-content;
 }
 
 .search-form__textfield:focus {
@@ -209,6 +206,7 @@ ol {
 
 .content__details {
   flex-grow: 1;
+  min-inline-size: 399px;
   block-size: 100%;
 }
 
@@ -220,7 +218,6 @@ ol {
   font-size: 75px;
   line-height: 70.5px;
   text-transform: uppercase;
-  inline-size: 260px;
   block-size: 210px;
 }
 
@@ -330,5 +327,5 @@ ol {
 
 .content__list::-webkit-scrollbar,
 .content__video-card-description::-webkit-scrollbar {
-  block-size: 0;
+  inline-size: 0;
 }
