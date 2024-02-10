@@ -63,7 +63,6 @@ ol {
   align-items: flex-end;
   gap: 30px;
   inline-size: 1140px;
-  min-block-size: 534px;
 }
 
 .result__video-container {
@@ -84,7 +83,6 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  min-block-size: 54px;
 }
 
 .search-form__fieldset {
@@ -99,6 +97,7 @@ ol {
 
 .search-form__label {
   display: block;
+  cursor: pointer;
   inline-size: fit-content;
 }
 
@@ -148,18 +147,13 @@ ol {
 
 .search-form__pseudo-checkbox {
   position: relative;
-  display: inline-block;
+  display: block;
   flex-grow: 0;
   flex-shrink: 0;
   margin-right: 5px;
   border: 1px solid #fff;
-  vertical-align: middle;
   inline-size: 19px;
   block-size: 19px;
-}
-
-.search-form__checkbox:focus {
-  outline: none;
 }
 
 .search-form__label:has(.search-form__checkbox:focus-visible) {
@@ -187,7 +181,7 @@ ol {
 }
 
 .button {
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   padding: 0;
   color: inherit;
   font-family: inherit;
@@ -212,13 +206,11 @@ ol {
 
 .title {
   margin-block-end: 26px;
-  padding-top: 2px;
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
   line-height: 70.5px;
   text-transform: uppercase;
-  block-size: 210px;
 }
 
 .content__accent {
@@ -234,7 +226,6 @@ ol {
 .content__list-item:not(.content__list-item:last-child) {
   margin-bottom: 30px;
   inline-size: 399px;
-  block-size: 107px;
 }
 
 .content__video-card {
@@ -244,11 +235,9 @@ ol {
 
 .content__card-link {
   display: block;
-  margin: 2px;
   padding: 2px;
   color: #fff;
   text-decoration: none;
-  block-size: 100%;
 }
 
 .content__card-link:focus {
@@ -262,7 +251,6 @@ ol {
 
 .content__card-link:active,
 .content__card-link_current {
-  text-decoration: none;
   background-color: #545050;
 }
 
@@ -280,25 +268,27 @@ ol {
 }
 
 .content__video-card-description {
-  overflow-y: auto;
   line-height: 16.2px;
   max-inline-size: 200px;
-  min-block-size: 20px;
-  max-block-size: 65px;
 }
 
 .content__video-card-title {
   margin-block-end: 6px;
-  padding-top: 2px;
+  overflow: hidden;
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  max-inline-size: 200px;
+  white-space: nowrap;
 }
 
 .content__video-card-thumbnail {
   flex-basis: 194px;
+  object-fit: cover;
+  object-position: center;
   block-size: 103px;
 }
 
@@ -322,12 +312,6 @@ ol {
 }
 
 .button:active {
-  background-color: #545050;
   text-decoration: none;
-
-}
-
-.content__list::-webkit-scrollbar,
-.content__video-card-description::-webkit-scrollbar {
-  inline-size: 0;
+  background-color: #545050;
 }
